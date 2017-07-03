@@ -61,7 +61,7 @@
             </Scripts>
         </asp:ScriptManager>
         <style>body{height:99vh} form > .container{height:80vh}</style>
-        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#DDB5C1; border-color:white;">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#A30B37; border-color:white;">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -69,7 +69,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/" style="color:white;">ComeYA!</a>
+                    <a class="navbar-brand" runat="server" href="~/" style="color:white;"><img src="comeya.png" height=25 /></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">

@@ -17,7 +17,7 @@ namespace ComeYA
         SqlDataAdapter sda = new SqlDataAdapter();
         DataSet ds = new DataSet();
         string connStr = ConfigurationManager.ConnectionStrings["usuarioConnectionString"].ConnectionString;
-        
+        SqlParameter param;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,21 +28,27 @@ namespace ComeYA
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "select * from usuario where nombUs='"+TextBox1.Text+"' AND passw='"+TextBox2.Text+ "' COLLATE SQL_Latin1_General_CP1_CS_AS AND Passw='"+TextBox2.Text+"'";
+            param =cmd.Parameters.Add("@responseMessage",SqlDbType.NVarChar);
+            param.Size = 32;
+            param.Direction = ParameterDirection.Output;
+            cmd.CommandText = "EXEC dbo.uspLogin @pLoginName = N'" + TextBox1.Text + "', @pPassword = N'" + TextBox2.Text + "', @responseMessage = @responseMessage OUTPUT"; /*"select * from usuario where nombUs='" +TextBox1.Text+"' AND passw='"+TextBox2.Text+ "' COLLATE SQL_Latin1_General_CP1_CS_AS AND Passw='"+TextBox2.Text+"'";*/
             cmd.Connection = con;
-            sda.SelectCommand = cmd;
+            cmd.ExecuteNonQuery();
+            Label1.Text=cmd.Parameters["@responseMessage"].Value.ToString();
+
+            /*sda.SelectCommand = cmd;
             sda.Fill(ds, "usuario");
-            if(ds.Tables [0].Rows.Count > 0)
+            if(cmd.out [0].Rows.Count > 0)
             {
                 Label1.Text = "El usuario existe";
             } else
             {
                 Label1.Text = "El usuario no existe o la contraseña esta mal";
-            }
+            }*/
 
             divControl.Visible = true;
         }
-
+        
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
 

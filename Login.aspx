@@ -11,7 +11,7 @@
             <p>
                 <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged" TextMode="Password"></asp:TextBox>
             </p>
-            <p style="text-align:right;"><asp:Button ID="Button1" runat="server" Text="Iniciar sesión" OnClick="Button1_Click" />
+            <p style="text-align:right;"><asp:Button ID="Button1" runat="server" Text="Iniciar sesión" Width="120px" BackColor="#BC6B82" BorderColor="White" ForeColor="White" Height="40px" BorderWidth="2px" OnClick="Button1_Click" />
             </p>
         </div>
         <br />

@@ -10,18 +10,16 @@
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="nombIng" DataValueField="nombIng" Height="48px" Width="40%" BackColor="#BC6B82" ForeColor="White">
             </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:usuarioConnectionString %>" SelectCommand="SELECT [nombIng] FROM [INGREDIENTE]"></asp:SqlDataSource>
-            <p>
-                &nbsp;</p>
+            <p>&nbsp;</p>
             <p style="align-content:center; text-align:right">
                 <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" Width="120px" BackColor="#BC6B82" BorderColor="White" ForeColor="White" Height="40px" BorderWidth="2px" />
-                <p><asp:Label ID="Label1" runat="server"></asp:Label></p>
             </p>
         </div>
-        <div class="cont2">
+        <div class="cont2">                
+            <p><asp:Label ID="Label1" runat="server"></asp:Label></p
             <table>
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
-                
                     <tr>
                         <td>
                             <h1 style="color:#fffcfd"><%# Eval("titulo") %></h1>
@@ -38,9 +36,8 @@
                     <tr>
                         <td><p style="margin-left: 15px"><%# Eval("preparación") %></p></td>
                     </tr>
-                
                 </ItemTemplate>
-                <SeparatorTemplate><p style="margin-top: 40px"></p></SeparatorTemplate>
+                <SeparatorTemplate><p style="margin-top: 50px"> </p></SeparatorTemplate>
             </asp:Repeater>
             </table>
         </div>
