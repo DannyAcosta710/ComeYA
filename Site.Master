@@ -8,7 +8,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - ComeYA</title>
-
+    <style>
+        .cont1{
+            background-color:#A30B37;
+            color:white;
+            padding:20px;
+            align-content:center;
+            text-align:center;
+        }
+        .cont2{
+            background-color:#BC6B82;
+            color:white;
+            padding:20px;
+        }
+        .cont3{
+            background-color:#DDB5C1;
+            padding:10px;
+            color:white;
+        }
+        h1{
+            font-size:24px;
+        }
+    </style>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -40,7 +61,7 @@
             </Scripts>
         </asp:ScriptManager>
         <style>body{height:99vh} form > .container{height:80vh}</style>
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#DDB5C1; border-color:white;">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -48,13 +69,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">ComeYA!</a>
+                    <a class="navbar-brand" runat="server" href="~/" style="color:white;">ComeYA!</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/Login">Log-In</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
+                        <li><a runat="server" style="color:white" href="~/">Inicio</a></li>
+                        <li><a runat="server" style="color:white" href="~/Login">Log-In</a></li>
+                        <li><a runat="server" style="color:white" href="~/About">Acerca de</a></li>
                     </ul>
                 </div>
             </div>

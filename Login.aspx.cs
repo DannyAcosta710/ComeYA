@@ -17,10 +17,11 @@ namespace ComeYA
         SqlDataAdapter sda = new SqlDataAdapter();
         DataSet ds = new DataSet();
         string connStr = ConfigurationManager.ConnectionStrings["usuarioConnectionString"].ConnectionString;
-
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            divControl.Visible = false;
             con.ConnectionString = connStr;
             con.Open();
         }
@@ -30,7 +31,7 @@ namespace ComeYA
             cmd.CommandText = "select * from usuario where nombUs='"+TextBox1.Text+"' AND passw='"+TextBox2.Text+ "' COLLATE SQL_Latin1_General_CP1_CS_AS AND Passw='"+TextBox2.Text+"'";
             cmd.Connection = con;
             sda.SelectCommand = cmd;
-           sda.Fill(ds, "usuario");
+            sda.Fill(ds, "usuario");
             if(ds.Tables [0].Rows.Count > 0)
             {
                 Label1.Text = "El usuario existe";
@@ -38,6 +39,8 @@ namespace ComeYA
             {
                 Label1.Text = "El usuario no existe o la contraseña esta mal";
             }
+
+            divControl.Visible = true;
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
