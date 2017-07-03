@@ -40,13 +40,13 @@
                     </tr>
                 
                 </ItemTemplate>
-                <SeparatorTemplate><p style="margin-top: 12px"></p></SeparatorTemplate>
+                <SeparatorTemplate><p style="margin-top: 40px"></p></SeparatorTemplate>
             </asp:Repeater>
             </table>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server"
             ConnectionString='<%$ ConnectionStrings:usuarioConnectionString %>'
-            SelectCommand="SELECT [preparación], [titulo], [ratingProm] FROM [RECETA] JOIN RECETA_INGRED ON receta.idReceta=RECETA_INGRED.idReceta JOIN INGREDIENTE ON RECETA_INGRED.idIngred=INGREDIENTE.idIngred WHERE INGREDIENTE.nombIng='@ingred'">
+            SelectCommand="SELECT [preparación], [titulo], [ratingProm] FROM [RECETA] JOIN RECETA_INGRED ON receta.recetaid=RECETA_INGRED.recetaid JOIN INGREDIENTE ON RECETA_INGRED.ingredid=INGREDIENTE.ingredid WHERE INGREDIENTE.nombIng='@ingred'">
         </asp:SqlDataSource>
     </div>
 </asp:Content>

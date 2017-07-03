@@ -27,10 +27,10 @@ namespace ComeYA
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "SELECT [preparación], [titulo], [ratingProm] FROM [RECETA] JOIN RECETA_INGRED ON receta.idReceta=RECETA_INGRED.idReceta JOIN INGREDIENTE ON RECETA_INGRED.idIngred=INGREDIENTE.idIngred WHERE INGREDIENTE.nombIng='"+DropDownList1.Text+"'";
+            cmd.CommandText = "SELECT [preparación], [titulo], [ratingProm] FROM [RECETA] JOIN RECETA_INGRED ON receta.recetaid=RECETA_INGRED.recetaid JOIN INGREDIENTE ON RECETA_INGRED.ingredid=INGREDIENTE.ingredid WHERE INGREDIENTE.nombIng='"+DropDownList1.Text+"'";
             cmd.Connection = con;
             sda.SelectCommand = cmd;
-            sda.Fill(ds, "[RECETA] JOIN RECETA_INGRED ON receta.idReceta=RECETA_INGRED.idReceta JOIN INGREDIENTE ON RECETA_INGRED.idIngred=INGREDIENTE.idIngred");
+            sda.Fill(ds, "[RECETA] JOIN RECETA_INGRED ON receta.recetaid=RECETA_INGRED.recetaid JOIN INGREDIENTE ON RECETA_INGRED.ingredid=INGREDIENTE.ingredid");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Repeater1.DataSource = null;
